@@ -1,8 +1,10 @@
 import time
 import tensorflow as tf
 from model import Generator, Discriminator
-from utils import generator_loss, discriminator_loss, create_optimizer, generate_and_save_images
-from IPython import display
+from utils import generator_loss, discriminator_loss 
+
+import numpy as np
+import matplotlib.pyplot as plt
 
 
 def train():
@@ -10,21 +12,24 @@ def train():
 
     # settting hyperparameter
     latent_dim = 100
-    epochs = 50
-    batch_size = 150
+    epochs = 800
+    batch_size = 200
     buffer_size = 6000
+    save_interval = 50
 
     generator = Generator()
     discriminator = Discriminator()
 
-    gen_optimizer = create_optimizer()
-    disc_optimizer = create_optimizer()
+    gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)    
+    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)    
 
-    train_data = train_data.reshape(train_data.shape[0], 28, 28, 1).astype('float32')
-    train_data = (train_data - 127.5)
+    # Rescale -1 to 1
+    train_data = train_data / 127.5 - 1.
+    train_data = np.expand_dims(train_data, axis=3).astype('float32')
+
     train_dataset = tf.data.Dataset.from_tensor_slices(train_data).shuffle(buffer_size).batch(batch_size)
 
-    seed = tf.random.normal([16, latent_dim])
+    cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=False)
 
     @tf.function
     def train_step(images):
@@ -35,8 +40,8 @@ def train():
             real_output = discriminator(images)
             generated_output = discriminator(generated_images)
 
-            gen_loss = generator_loss(generated_output)
-            disc_loss = discriminator_loss(real_output, generated_output)
+            gen_loss = generator_loss(cross_entropy, generated_output)
+            disc_loss = discriminator_loss(cross_entropy, real_output, generated_output)
 
         grad_gen = gen_tape.gradient(gen_loss, generator.trainable_variables)
         grad_disc = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
@@ -46,18 +51,39 @@ def train():
 
         return gen_loss, disc_loss
 
+    def save_imgs(epoch):
+        r, c = 5, 5
+        noise = np.random.normal(0, 1, (r * c, latent_dim))
+        gen_imgs = generator(noise)
+
+        # Rescale images 0 - 1
+        gen_imgs = 0.5 * gen_imgs + 0.5
+
+        fig, axs = plt.subplots(r, c)
+        cnt = 0
+        for i in range(r):
+            for j in range(c):
+                axs[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
+                axs[i, j].axis('off')
+                cnt += 1
+        fig.savefig("images/mnist_%d.png" % epoch)
+        plt.close()
+
     for epoch in range(epochs):
         start = time.time()
+        total_gen_loss = 0
+        total_disc_loss = 0
+
         for images in train_dataset:
             gen_loss, disc_loss = train_step(images)
 
-        print('Time for epoch {} is {} sec: gen_loss = {}, disc_loss = {}'.format(epoch + 1, time.time() - start, gen_loss, disc_loss))
+        total_gen_loss += gen_loss
+        total_disc_loss += disc_loss
 
-    # Generate after the final epoch
-    display.clear_output(wait=True)
-    generate_and_save_images(generator,
-                             epochs,
-                             seed)
+        print('Time for epoch {} is {} sec - gen_loss = {}, disc_loss = {}'.format(epoch + 1, time.time() - start, total_gen_loss, total_disc_loss))
+        if epoch % save_interval == 0:
+            save_imgs(epoch)
+
 
 
 if __name__ == "__main__":
