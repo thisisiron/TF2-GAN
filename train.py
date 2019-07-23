@@ -1,14 +1,19 @@
 import time
 import tensorflow as tf
+
 from model import Generator, Discriminator
 from utils import generator_loss, discriminator_loss 
 
 import numpy as np
 import matplotlib.pyplot as plt
 
+import os
 
 def train():
     (train_data, _), (_, _) = tf.keras.datasets.mnist.load_data()
+
+    if not os.path.exists('./images'):
+        os.makedirs('./images')
 
     # settting hyperparameter
     latent_dim = 100
@@ -83,7 +88,6 @@ def train():
         print('Time for epoch {} is {} sec - gen_loss = {}, disc_loss = {}'.format(epoch + 1, time.time() - start, total_gen_loss, total_disc_loss))
         if epoch % save_interval == 0:
             save_imgs(epoch)
-
 
 
 if __name__ == "__main__":
