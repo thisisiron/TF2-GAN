@@ -5,9 +5,9 @@ from model import Generator, Discriminator
 from utils import generator_loss, discriminator_loss 
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 import os
+
 
 def train():
     (train_data, _), (_, _) = tf.keras.datasets.mnist.load_data()
@@ -56,23 +56,6 @@ def train():
 
         return gen_loss, disc_loss
 
-    def save_imgs(epoch):
-        r, c = 5, 5
-        noise = np.random.normal(0, 1, (r * c, latent_dim))
-        gen_imgs = generator(noise)
-
-        # Rescale images 0 - 1
-        gen_imgs = 0.5 * gen_imgs + 0.5
-
-        fig, axs = plt.subplots(r, c)
-        cnt = 0
-        for i in range(r):
-            for j in range(c):
-                axs[i, j].imshow(gen_imgs[cnt, :, :, 0], cmap='gray')
-                axs[i, j].axis('off')
-                cnt += 1
-        fig.savefig("images/mnist_%d.png" % epoch)
-        plt.close()
 
     for epoch in range(epochs):
         start = time.time()
@@ -87,7 +70,7 @@ def train():
 
         print('Time for epoch {} is {} sec - gen_loss = {}, disc_loss = {}'.format(epoch + 1, time.time() - start, total_gen_loss, total_disc_loss))
         if epoch % save_interval == 0:
-            save_imgs(epoch)
+            save_imgs(epoch, generator, latent_dim)
 
 
 if __name__ == "__main__":

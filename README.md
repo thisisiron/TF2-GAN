@@ -2,8 +2,7 @@
 This is the simple code for me to learn tensorflow 2.0 and DCGAN.
 
 ## Requirements
-Tensorflow == 2.0_beta
-
+Tensorflow == 2.0_beta <br>
 Python == 3.6
 
 ## Data
