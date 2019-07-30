@@ -2,7 +2,7 @@ import time
 import tensorflow as tf
 
 from model import Generator, Discriminator
-from utils import generator_loss, discriminator_loss 
+from utils import generator_loss, discriminator_loss, save_imgs
 
 import numpy as np
 
@@ -25,8 +25,8 @@ def train():
     generator = Generator()
     discriminator = Discriminator()
 
-    gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)    
-    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)    
+    gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
+    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)   
 
     # Rescale -1 to 1
     train_data = train_data / 127.5 - 1.
@@ -55,7 +55,6 @@ def train():
         disc_optimizer.apply_gradients(zip(grad_disc, discriminator.trainable_variables))
 
         return gen_loss, disc_loss
-
 
     for epoch in range(epochs):
         start = time.time()
