@@ -26,7 +26,7 @@ def train():
     discriminator = Discriminator()
 
     gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
-    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)   
+    disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
     # Rescale -1 to 1
     train_data = train_data / 127.5 - 1.
