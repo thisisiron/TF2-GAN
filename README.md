@@ -1,5 +1,5 @@
 # TF2-GAN 
-![](https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.tensorflow.org%2Fimages%2Ftf_logo_social.png&imgrefurl=https%3A%2F%2Fwww.tensorflow.org%2F&docid=r9XhT1GymViHcM&tbnid=hZ5TX3QXxQFm1M%3A&vet=10ahUKEwjx4cmmmI3lAhXBAYgKHUwvCAAQMwhoKAAwAA..i&w=1200&h=675&bih=782&biw=1474&q=tensorflow%20logo&ved=0ahUKEwjx4cmmmI3lAhXBAYgKHUwvCAAQMwhoKAAwAA&iact=mrc&uact=8)
+![](https://pbs.twimg.com/profile_images/1103339571977248768/FtFnqC38_400x400.png)
 
 ## Requirements
 Tensorflow 2.0
