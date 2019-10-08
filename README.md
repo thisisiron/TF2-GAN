@@ -8,7 +8,7 @@ Tensorflow 2.0
 
 ## How to Run 
 ```
-cd GAN_YOU_WANT
+cd GAN_DIR_YOU_WANT
 python train.py
 ```
 
