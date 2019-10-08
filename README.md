@@ -13,7 +13,7 @@ python train.py
 ```
 
 ## File structure
-| py       | Description                                 |
+| Name     | Description                                 |
 |----------|---------------------------------------------|
 | utils.py | Loss function, Image storage function, etc. |
 | model.py | Model Architecture                          |
