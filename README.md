@@ -21,6 +21,13 @@ python train.py
 
 ## GAN List
 - [ ] GAN
+- [ ] CGAN
+- [ ] ACGAN
+- [ ] infoGAN
+- [ ] BEGAN
+- [ ] Stacked GAN
+- [ ] SRGAN
+- [ ] EBGAN
 - [X] DCGAN
 - [ ] SAGAN
 - [ ] LSGAN
