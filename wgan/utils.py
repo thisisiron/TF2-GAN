@@ -2,15 +2,16 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 
-def discriminator_loss(loss_object, real_output, fake_output):
-    real_loss = loss_object(tf.ones_like(real_output), real_output)
-    fake_loss = loss_object(tf.zeros_like(fake_output), fake_output)
-    total_loss = real_loss + fake_loss
-    return total_loss
+def discriminator_loss(real_output, generated_output):
+
+    real_loss = -tf.reduce_mean(real_output)
+    fake_loss = tf.reduce_mean(generated_output)
+
+    return real_loss + fake_loss
 
 
-def generator_loss(loss_object, fake_output):
-    return loss_object(tf.ones_like(fake_output), fake_output)
+def generator_loss(generated_output):
+    return -tf.reduce_mean(generated_output)
 
 
 def save_imgs(epoch, generator, noise):

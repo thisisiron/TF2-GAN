@@ -1,7 +1,7 @@
-import time
 import os
+import time
 
-import tensorflow as tf
+import tensorflow as tf  # TF 2.0
 
 from model import Generator, Discriminator
 from utils import generator_loss, discriminator_loss, save_imgs

@@ -16,10 +16,9 @@ class Generator(tf.keras.Model):
             self.convT_2 = tf.keras.layers.Conv2DTranspose(64, (5, 5), strides=(2, 2), padding='same', use_bias=False)
             self.convT_3 = tf.keras.layers.Conv2DTranspose(self.channels, (5, 5), strides=(2, 2), padding='same', use_bias=False, activation='tanh')
         elif self.method == 'upsample':
+            self.upsample2d = tf.keras.layers.UpSampling2D()
             self.conv_1 = tf.keras.layers.Conv2D(128, (3, 3), padding='same', use_bias=False)
-            self.upsample2d_1 = tf.keras.layers.UpSampling2D()
             self.conv_2 = tf.keras.layers.Conv2D(64, (3, 3), padding='same', use_bias=False)
-            self.upsample2d_2 = tf.keras.layers.UpSampling2D()
             self.conv_3 = tf.keras.layers.Conv2D(self.channels, (3, 3), padding='same', use_bias=False, activation='tanh')
 
         self.batch_norm_1 = tf.keras.layers.BatchNormalization()
@@ -31,7 +30,6 @@ class Generator(tf.keras.Model):
         self.leakyrelu_3 = tf.keras.layers.LeakyReLU()
 
     def call(self, inputs, training=True):
-
         if self.method == 'transpose':
             x = self.dense(inputs)
             x = self.batch_norm_1(x, training)
@@ -62,21 +60,20 @@ class Generator(tf.keras.Model):
             x = self.batch_norm_2(x, training)
             x = self.leakyrelu_2(x)
 
-            x = self.upsample2d_1(x)
+            x = self.upsample2d(x)
             x = self.conv_2(x)
             x = self.batch_norm_3(x, training)
             x = self.leakyrelu_3(x)
 
-            x = self.upsample2d_2(x)
+            x = self.upsample2d(x)
             return self.conv_3(x)
 
 
-class Discriminator(tf.keras.Model):
+class Critic(tf.keras.Model):
     def __init__(self):
-        super(Discriminator, self).__init__()
-
-        self.conv_1 = tf.keras.layers.Conv2D(64, (5, 5), strides=(2, 2), padding='same')
-        self.conv_2 = tf.keras.layers.Conv2D(128, (5, 5), strides=(2, 2), padding='same')
+        super(Critic, self).__init__()
+        self.conv_1 = tf.keras.layers.Conv2D(64, (5, 5), strides=2, padding='same')
+        self.conv_2 = tf.keras.layers.Conv2D(128, (5, 5), strides=2, padding='same')
 
         self.flatten = tf.keras.layers.Flatten()
 
@@ -88,12 +85,15 @@ class Discriminator(tf.keras.Model):
         self.dropout_1 = tf.keras.layers.Dropout(0.3)
         self.dropout_2 = tf.keras.layers.Dropout(0.3)
 
+        self.batch_norm_1 = tf.keras.layers.BatchNormalization()
+
     def call(self, inputs, training=True):
         x = self.conv_1(inputs)
         x = self.leakyrelu_1(x)
         x = self.dropout_1(x, training)
- 
+
         x = self.conv_2(x)
+        x = self.batch_norm_1(x, training)
         x = self.leakyrelu_2(x)
         x = self.dropout_2(x, training)
 
