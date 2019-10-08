@@ -1,5 +1,7 @@
 # TF2-GAN 
-![](https://pbs.twimg.com/profile_images/1103339571977248768/FtFnqC38_400x400.png)
+<p align="center">
+    <img src="https://pbs.twimg.com/profile_images/1103339571977248768/FtFnqC38_400x400.png" width="200"\>
+</p>
 
 ## Requirements
 Tensorflow 2.0
