@@ -20,7 +20,7 @@ def normalize(x):
 
 
 def save_imgs(epoch, generator, noise):
-    gen_imgs = generator(noise, False)
+    gen_imgs = generator(noise, training=False)
 
     fig = plt.figure(figsize=(4, 4))
 
