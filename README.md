@@ -20,7 +20,7 @@ python train.py
 | train.py | Model learning and Loading datasets         |
 
 ## GAN List
-- [ ] GAN
+- [X] GAN
 - [ ] CGAN
 - [ ] ACGAN
 - [ ] infoGAN
