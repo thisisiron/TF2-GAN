@@ -1,16 +1,17 @@
 import os
 import time
 
-import numpy as np
 import tensorflow as tf  # TF 2.0
+import tensorflow_datasets as tfds
 
 from model import Generator, Critic
-from utils import discriminator_loss, generator_loss, save_imgs
+from utils import discriminator_loss, generator_loss, save_imgs, normalize
 
 
 def train():
 
-    (train_data, _), (_, _) = tf.keras.datasets.mnist.load_data()
+    data, info = tfds.load("mnist", with_info=True, data_dir='/data/tensorflow_datasets')
+    train_data = data['train']
 
     if not os.path.exists('./images'):
         os.makedirs('./images')
@@ -29,11 +30,7 @@ def train():
     gen_optimizer = tf.keras.optimizers.RMSprop(0.00005)
     disc_optimizer = tf.keras.optimizers.RMSprop(0.00005)
 
-    # Rescale -1 to 1
-    train_data = train_data / 127.5 - 1.
-    train_data = np.expand_dims(train_data, axis=3).astype('float32')
-
-    train_dataset = tf.data.Dataset.from_tensor_slices(train_data).shuffle(buffer_size).batch(batch_size)
+    train_dataset = train_data.map(normalize).shuffle(buffer_size).batch(batch_size)
 
     @tf.function
     def train_discriminator(images):

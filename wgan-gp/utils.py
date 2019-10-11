@@ -32,8 +32,13 @@ def random_weighted_average(inputs):
     return (alpha * inputs[0]) + ((1 - alpha) * inputs[1])
 
 
-def save_imgs(epoch, generator, noise):
+def normalize(x):
+    image = tf.cast(x['image'], tf.float32)
+    image = (image / 127.5) - 1
+    return image
 
+
+def save_imgs(epoch, generator, noise):
     gen_imgs = generator(noise, False)
 
     fig = plt.figure(figsize=(4, 4))

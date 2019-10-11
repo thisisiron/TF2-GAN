@@ -14,8 +14,13 @@ def generator_loss(generated_output):
     return -tf.reduce_mean(generated_output)
 
 
-def save_imgs(epoch, generator, noise):
+def normalize(x):
+    image = tf.cast(x['image'], tf.float32)
+    image = (image / 127.5) - 1
+    return image
 
+
+def save_imgs(epoch, generator, noise):
     gen_imgs = generator(noise, False)
 
     fig = plt.figure(figsize=(4, 4))
