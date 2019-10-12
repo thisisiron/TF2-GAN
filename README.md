@@ -5,11 +5,11 @@
 
 ## Introduction
 This code implements a typical GAN using Tenseflow 2.0. 
-I'm following the suggestions in the possible papers, and I have changed the model structure slightly for simple task only. 
+I'm following the suggestions in the possible papers, and I have changed the model structure or optimizer slightly for simple task only. 
 However, the main content in the paper has been implemented as it is.
 
 ## Requirements
-Tensorflow 2.0
+Tensorflow 2.0<br>
 Tensorflow Datasets
 
 ## How to Run 
@@ -36,7 +36,7 @@ python train.py
 - [ ] EBGAN
 - [X] DCGAN
 - [ ] SAGAN
-- [ ] LSGAN
+- [X] LSGAN
 - [ ] CycleGAN
 - [X] WGAN
 - [X] WGAN-GP 
