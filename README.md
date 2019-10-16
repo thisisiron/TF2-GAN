@@ -27,7 +27,7 @@ python train.py
 
 ## GAN List
 - [X] GAN
-- [ ] CGAN
+- [X] CGAN
 - [ ] ACGAN
 - [ ] infoGAN
 - [ ] BEGAN
