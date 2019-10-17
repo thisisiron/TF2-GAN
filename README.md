@@ -31,6 +31,7 @@ python train.py
 - [ ] ACGAN
 - [ ] infoGAN
 - [ ] BEGAN
+- [ ] BigGAN
 - [ ] Stacked GAN
 - [ ] SRGAN
 - [ ] EBGAN
