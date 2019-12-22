@@ -23,13 +23,15 @@ def train():
     buffer_size = 6000
     save_interval = 20
 
+    img_shape = (112, 112, 3)
+
     generator = Generator()
     discriminator = Discriminator()
 
     gen_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
     disc_optimizer = tf.keras.optimizers.Adam(0.0002, 0.5)
 
-    train_dataset = train_data.map(preprocess_image).shuffle(buffer_size).batch(batch_size)
+    train_dataset = train_data.map(lambda x: preprocess_image(x, img_shape)).shuffle(buffer_size).batch(batch_size)
 
     mse = tf.keras.losses.MeanSquaredError()
 

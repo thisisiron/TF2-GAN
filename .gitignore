@@ -1,3 +1,4 @@
 __pycache__
 mnist*.png
 nohup.out
+datasets

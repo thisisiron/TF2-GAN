@@ -1,6 +1,6 @@
 # Cycle GAN 
 
-## Generator Architecture
+## Model Architecture
 ![](./images/model.png)
 
 ## Result

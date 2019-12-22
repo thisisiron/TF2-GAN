@@ -24,9 +24,9 @@ def resize(image, height, width):
     return image
 
 
-def preprocess_image(data):
+def preprocess_image(data, img_shape):
     image = data['image']
-    image = resize(image, 112, 112)
+    image = resize(image, img_shape[0], img_shape[1])
     image = normalize(image)
 
     return image
