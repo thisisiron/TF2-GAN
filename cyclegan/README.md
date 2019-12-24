@@ -7,16 +7,16 @@
 ![](./images/result.png)
 
 ## Loss Function
-**Adverarial Loss**
+### Adverarial Loss
 ![](./images/adversarial_loss.png)
 
-**Cycle Consistency Loss**
+### Cycle Consistency Loss
 ![](./images/cycle_consistency_loss.png)
 
-**Identity Loss**
+### Identity Loss
 ![](./images/identity_loss.png)
 
-**Full Objective**
+### Full Objective
 ![](./images/full_objective.png)
 
 ## Dataset
