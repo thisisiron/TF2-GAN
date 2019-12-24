@@ -1,5 +1,5 @@
 __pycache__
 mnist*.png
-result*.png
+result_*.png
 nohup.out
 datasets
