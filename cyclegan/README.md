@@ -9,10 +9,13 @@
 ## Loss Function
 **Adverarial Loss**
 ![](./images/adversarial_loss.png)
+
 **Cycle Consistency Loss**
 ![](./images/cycle_consistency_loss.png)
+
 **Identity Loss**
 ![](./images/identity_loss.png)
+
 **Full Objective**
 ![](./images/full_objective.png)
 
