@@ -32,7 +32,7 @@ python train.py
 - [X] LSGAN
 - [X] WGAN
 - [X] WGAN-GP 
-- [ ] CycleGAN
+- [X] CycleGAN
 - [ ] SRGAN
 - [ ] SAGAN
 - [ ] ACGAN
