@@ -1,5 +1,8 @@
 __pycache__
+
 mnist*.png
 result_*.png
-nohup.out
-datasets
+nohup*
+
+datasets/
+checkpoints/
