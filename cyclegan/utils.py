@@ -24,7 +24,6 @@ def identity_loss(loss_object, real_image, same_image, _lambda=10):
 
 def save_imgs(epoch, generator, real_x):
     gene_imgs = generator(real_x, training=False)
-    print(gene_imgs.shape)
 
     gene_imgs = ((gene_imgs.numpy() + 1) * 127.5).astype(np.uint8)
     real_x = ((real_x.numpy() + 1) * 127.5).astype(np.uint8)
@@ -41,7 +40,8 @@ def save_imgs(epoch, generator, real_x):
         plt.imshow(gene_imgs[i])
         plt.axis('off')
 
-    fig.savefig("images/result_{}.png".format(str(epoch)).zfill(5))
+    fig.savefig("images/result_{}.png".format(str(epoch).zfill(5)))
+    print('Success saving images')
 
 
 def normalize_img(x, dtype):
