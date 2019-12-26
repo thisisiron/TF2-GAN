@@ -8,5 +8,9 @@
 ## Result
 ![](./images/result.png)
 
+## Loss
+### Objective Function
+![](./images/objective_function.png)
+
 ## Reference
 [Least Squares Generative Adversarial Networks](https://arxiv.org/pdf/1611.04076.pdf)
