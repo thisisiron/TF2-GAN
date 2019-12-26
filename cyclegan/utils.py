@@ -28,17 +28,17 @@ def save_imgs(epoch, generator, real_x):
     gene_imgs = ((gene_imgs.numpy() + 1) * 127.5).astype(np.uint8)
     real_x = ((real_x.numpy() + 1) * 127.5).astype(np.uint8)
 
-    fig = plt.figure(figsize=(16, 16))
+    fig = plt.figure(figsize=(8, 16))
 
-    for i in range(real_x.shape[0]):
-        plt.subplot(4, 4, i + 1)
+    tmp = 0
+    for i in range(0, real_x.shape[0]):
+        plt.subplot(4, 2, i + 1 + tmp)
         plt.imshow(real_x[i])
         plt.axis('off')
-
-    for i in range(gene_imgs.shape[0]):
-        plt.subplot(4, 4, i + real_x.shape[0] + 1)
+        plt.subplot(4, 2, i + 2 + tmp)
         plt.imshow(gene_imgs[i])
         plt.axis('off')
+        tmp += 1
 
     fig.savefig("images/result_{}.png".format(str(epoch).zfill(5)))
     print('Success saving images')
