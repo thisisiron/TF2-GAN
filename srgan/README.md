@@ -7,15 +7,21 @@
 ![](./images/result.png)
 
 ## Loss Function
-### Adverarial Loss
-![](./images/adversarial_loss.png)
+### Discriminator Loss
+![](./images/discriminator_loss.png)
 
 ### Perceptual Loss
-![](./images/cycle_consistency_loss.png)
+![](./images/perceptual_loss.png)
 
-**Content Loss**
+### Content Loss
+**MSE**
+![](./images/content_mse.png)
 
-**Adversarial loss**
+**VGG**
+![](./images/content_vgg.png)
+
+### Generator Loss
+![](./images/genenator_loss.png)
 
 
 ## Reference
