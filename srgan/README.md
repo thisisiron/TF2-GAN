@@ -15,9 +15,11 @@
 
 ### Content Loss
 **MSE**
+
 ![](./images/content_mse.png)
 
 **VGG**
+
 ![](./images/content_vgg.png)
 
 ### Generator Loss
