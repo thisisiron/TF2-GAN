@@ -10,7 +10,8 @@ However, the main content in the paper has been implemented as it is.
 
 ## Requirements
 Tensorflow 2.0<br>
-Tensorflow Datasets
+Tensorflow Datasets<br>
+Tensorflow-addons
 
 ## How to Run 
 ```
