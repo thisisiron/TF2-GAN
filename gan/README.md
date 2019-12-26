@@ -3,6 +3,10 @@
 ## Algorithm 
 ![](./images/algorithm.png)
 
+## Loss
+### Objective Function
+![](./images/objective_function.png)
+
 ## Result
 ![](./images/result.png)
 

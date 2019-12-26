@@ -3,9 +3,6 @@
 ## Model Architecture
 ![](./images/model.png)
 
-## Result
-![](./images/result.png)
-
 ## Loss Function
 ### Adverarial Loss
 ![](./images/adversarial_loss.png)
@@ -18,6 +15,9 @@
 
 ### Full Objective
 ![](./images/full_objective.png)
+
+## Result
+![](./images/result.png)
 
 ## Dataset
 ```

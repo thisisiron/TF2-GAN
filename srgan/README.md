@@ -3,9 +3,6 @@
 ## Model Architecture
 ![](./images/model.png)
 
-## Result
-![](./images/result.png)
-
 ## Loss Function
 ### Discriminator Loss
 ![](./images/discriminator_loss.png)
@@ -25,6 +22,8 @@
 ### Generator Loss
 ![](./images/genenator_loss.png)
 
+## Result
+![](./images/result.png)
 
 ## Reference
 [Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network](https://arxiv.org/pdf/1609.04802.pdf)
