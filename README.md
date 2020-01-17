@@ -42,3 +42,4 @@ python train.py
 - [ ] BigGAN
 - [ ] Stacked GAN
 - [ ] EBGAN
+- [ ] StarGAN
