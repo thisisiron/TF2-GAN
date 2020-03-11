@@ -4,9 +4,8 @@
 </p>
 
 ## Introduction
-This code implements a typical GAN using Tenseflow 2.0. 
-I'm following the suggestions in the papers, and I have changed the model structure or optimizer slightly for simple task only. 
-However, the main content in the paper has been implemented as it is.
+Typical GANs are implemented as Tensorflow 2. <br>
+I followed the suggestions in the papers, and I slightly changed the model structure or optimizer for simple task. <br>
 
 ## Requirements
 Tensorflow 2.0<br>
