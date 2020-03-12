@@ -18,7 +18,7 @@
 ![](./images/full_objective.png)
 
 ## Result
-| Input | Blond Hair || Input | Black Hair || Input | Brown_Hair || Input | Aged || Input | Gender |
+| Input | Blond Hair || Input | Black Hair || Input | Brown Hair || Input | Aged || Input | Gender |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |  ![](./images/blonde_ori1.png) | ![](./images/blonde_tar1.png) || ![](./images/black_ori1.png) | ![](./images/black_tar1.png) || ![](./images/brown_ori1.png) | ![](./images/brown_tar1.png) || ![](./images/aged_ori1.png) | ![](./images/aged_tar1.png) || ![](./images/gender_ori1.png) | ![](./images/gender_tar1.png) |
 | ![](./images/blonde_ori2.png) | ![](./images/blonde_tar2.png) || ![](./images/black_ori2.png) | ![](./images/black_tar2.png) || ![](./images/brown_ori2.png) | ![](./images/brown_tar2.png) || ![](./images/aged_ori2.png) | ![](./images/aged_tar2.png) || ![](./images/gender_ori2.png) | ![](./images/gender_tar2.png) |
