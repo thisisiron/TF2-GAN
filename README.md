@@ -33,6 +33,7 @@ python train.py
 - [X] WGAN
 - [X] WGAN-GP 
 - [X] CycleGAN
+- [X] StarGAN
 - [ ] SRGAN
 - [ ] SAGAN
 - [ ] ACGAN
@@ -41,4 +42,3 @@ python train.py
 - [ ] BigGAN
 - [ ] Stacked GAN
 - [ ] EBGAN
-- [ ] StarGAN
