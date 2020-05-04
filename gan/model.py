@@ -14,7 +14,7 @@ class Generator(tf.keras.Model):
 
     def call(self, inputs):
         x = self.dense_1(inputs)
-        x = self.dense_2(inputs)
+        x = self.dense_2(x)
         x = self.dense_3(x)
         x = self.dense_4(x)
         return self.reshape(x)
