@@ -18,40 +18,27 @@
 <img src="./images/full_objective.png" width="500">
 
 ## Result
-### Blond Hair
-| Input | Output |
-|---|---|
-| ![](./images/blonde_ori1.png) | ![](./images/blonde_tar1.png) |
-| ![](./images/blonde_ori2.png) | ![](./images/blonde_tar2.png) |
-| ![](./images/blonde_ori3.png) | ![](./images/blonde_tar3.png) |
+|Blond Hair|||Black Hair|||Brown Hair||
+|---|---|---|---|---|---|---|---|
+| Input | Output || Input | Output ||| Input | Output |
+| ![](./images/blonde_ori1.png) | ![](./images/blonde_tar1.png) || ![](./images/black_ori1.png) | ![](./images/black_tar1.png) || ![](./images/brown_ori1.png) | ![](./images/brown_tar1.png) |
+| ![](./images/blonde_ori2.png) | ![](./images/blonde_tar2.png) || ![](./images/black_ori2.png) | ![](./images/black_tar2.png) || ![](./images/brown_ori2.png) | ![](./images/brown_tar2.png) |
+| ![](./images/blonde_ori3.png) | ![](./images/blonde_tar3.png) || ![](./images/black_ori3.png) | ![](./images/black_tar3.png) || ![](./images/brown_ori3.png) | ![](./images/brown_tar3.png) |
 
-### Black Hair
-| Input | Output |
-|---|---|
-| ![](./images/black_ori1.png) | ![](./images/black_tar1.png) |
-| ![](./images/black_ori2.png) | ![](./images/black_tar2.png) |
-| ![](./images/black_ori3.png) | ![](./images/black_tar3.png) |
 
-### Brown Hair
-| Input | Output |
-|---|---|
-| ![](./images/brown_ori1.png) | ![](./images/brown_tar1.png) |
-| ![](./images/brown_ori2.png) | ![](./images/brown_tar2.png) |
-| ![](./images/brown_ori3.png) | ![](./images/brown_tar3.png) |
+|Aged|||Gender||
+|---|---|---|---|---|
+| Input | Output || Input | Output |
+| ![](./images/aged_ori1.png) | ![](./images/aged_tar1.png) || ![](./images/gender_ori1.png) | ![](./images/gender_tar1.png) |
+| ![](./images/aged_ori2.png) | ![](./images/aged_tar2.png) || ![](./images/gender_ori2.png) | ![](./images/gender_tar2.png) |
+| ![](./images/aged_ori3.png) | ![](./images/aged_tar3.png) || ![](./images/gender_ori3.png) | ![](./images/gender_tar3.png) |
 
-### Aged
-| Input | Output |
-|---|---|
-| ![](./images/aged_ori1.png) | ![](./images/aged_tar1.png) |
-| ![](./images/aged_ori2.png) | ![](./images/aged_tar2.png) |
-| ![](./images/aged_ori3.png) | ![](./images/aged_tar3.png) |
 
-### Gender
-| Input | Output |
-|---|---|
-| ![](./images/gender_ori1.png) | ![](./images/gender_tar1.png) |
-| ![](./images/gender_ori2.png) | ![](./images/gender_tar2.png) |
-| ![](./images/gender_ori3.png) | ![](./images/gender_tar3.png) |
+
+
+
+
+
 
 ## Dataset
 [celebA Dataset Download (suvojit-0x55aa)](https://github.com/suvojit-0x55aa/celebA-HQ-dataset-download)
