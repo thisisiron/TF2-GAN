@@ -34,7 +34,7 @@ python train.py
 - [X] WGAN-GP 
 - [X] CycleGAN
 - [X] StarGAN
-- [ ] SRGAN
+- [X] SRGAN
 - [ ] SAGAN
 - [ ] ACGAN
 - [ ] infoGAN
